@@ -53,19 +53,20 @@ class array_resp:
     
 
 
-# In[85]:
+# In[87]:
 
 arg = array_resp(5)
 arg.build_table(360)
 clean_response = arg.calc_response(0.75)
 noisy_response = clean_response + 0.1 * np.random.random(clean_response.shape)
 distances = arg.calc_distance(noisy_response)
+print noisy_response
 print arg.convert_to_degrees(0.75)
 plt.plot(arg.convert_to_degrees(arg.doa), arg.calc_distance(noisy_response)); plt.show()
 print arg.convert_to_degrees(arg.find_nearest(noisy_response))
 
 
-# In[84]:
+# In[88]:
 
 
 
